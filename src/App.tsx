@@ -1,8 +1,11 @@
+import { Route, Routes } from "react-router-dom";
+import SelectValues from "./components/SelectValues";
+
 function App() {
   return (
-    <>
-      <p className="text-3xl">Personal Values Client</p>
-    </>
+    <Routes>
+      <Route path="/" element={<SelectValues />} />
+    </Routes>
   );
 }
 
