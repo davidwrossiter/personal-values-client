@@ -1,7 +1,10 @@
 import CheckBoxContainer from "../blocks/CheckBoxContainer";
 import Header from "./Header";
+import { useState } from "react";
 
 function SelectValues() {
+  const [checkedItems, setCheckedItems] = useState<string[]>([]);
+
   return (
     <div className="h-screen flex flex-col">
       <Header />
@@ -15,10 +18,18 @@ function SelectValues() {
             resonate with you.
           </p>
         </div>
-        <CheckBoxContainer />
+        <CheckBoxContainer
+          checkedItems={checkedItems}
+          setCheckedItems={setCheckedItems}
+        />
       </div>
       <div className="w-full px-10 pb-16 pt-8 flex flex-row justify-end">
-        <button className="bg-[#0B0B0B] rounded-lg px-4 py-[6px] text-white">
+        <button
+          className="bg-[#0B0B0B] rounded-lg px-4 py-[6px] text-white"
+          onClick={() => {
+            console.log(checkedItems);
+          }}
+        >
           Generate
         </button>
       </div>
