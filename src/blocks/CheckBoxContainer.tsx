@@ -132,7 +132,7 @@ function CheckBoxContainer({ checkedItems, setCheckedItems }: any) {
       if (prevItems.includes(value)) {
         return prevItems.filter((item: any) => item !== value);
       } else {
-        return [...prevItems, value];
+        return [...prevItems, value + " "];
       }
     });
   };
@@ -143,7 +143,7 @@ function CheckBoxContainer({ checkedItems, setCheckedItems }: any) {
           <CheckBox
             key={index}
             title={value}
-            isChecked={checkedItems.includes(value)}
+            isChecked={checkedItems.includes(value + " ")}
             onToggle={() => handleToggle(value)}
           />
         ))}
