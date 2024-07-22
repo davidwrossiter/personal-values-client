@@ -13,7 +13,6 @@ function ReturnValues() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    const props = { checkedItems: checkedItems };
     navigate("/");
   };
 
