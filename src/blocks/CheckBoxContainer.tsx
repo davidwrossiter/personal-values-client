@@ -138,7 +138,7 @@ function CheckBoxContainer({ checkedItems, setCheckedItems }: any) {
   };
   return (
     <div className="flex-grow overflow-y-auto border mt-12 px-4 py-6 rounded-l-xl">
-      <div className="flex flex-row justify-center sm:justify-center flex-wrap gap-x-6 gap-y-2 sm:gap-x-12 sm:gap-y-6">
+      <div className="flex flex-row justify-start flex-wrap gap-x-6 gap-y-2 sm:gap-x-12 sm:gap-y-6">
         {values.map((value, index) => (
           <CheckBox
             key={index}
