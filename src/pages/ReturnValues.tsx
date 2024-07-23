@@ -9,11 +9,17 @@ function ReturnValues() {
   const location = useLocation();
   const { checkedItems } = location.state || {};
   const [llmResponse, setLlmResponse] = useState<any>(null);
+  const [reload, setReload] = useState(false);
 
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/");
+  };
+
+  const handleRegenerate = () => {
+    setReload(!reload);
+    setLlmResponse(null);
   };
 
   useEffect(() => {
@@ -37,7 +43,7 @@ function ReturnValues() {
     };
 
     fetchData(); // Call the fetchData function immediately
-  }, [checkedItems]);
+  }, [checkedItems, reload]);
 
   return (
     <div className="h-screen flex flex-col">
@@ -58,10 +64,16 @@ function ReturnValues() {
       </div>
       <div className="w-full px-10 lg:px-40 pb-16 pt-8 flex flex-row justify-end">
         <button
-          className="bg-[#0B0B0B] rounded-lg px-4 py-[6px] text-white"
+          className="bg-[#0B0B0B] mr-2 rounded-lg px-4 py-[6px] text-white"
           onClick={handleClick}
         >
           Go back
+        </button>
+        <button
+          className="bg-[#0B0B0B] rounded-lg px-4 py-[6px] text-white"
+          onClick={handleRegenerate}
+        >
+          Try again
         </button>
       </div>
     </div>
