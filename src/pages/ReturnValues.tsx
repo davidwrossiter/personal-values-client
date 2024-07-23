@@ -52,9 +52,9 @@ function ReturnValues() {
         <h1 className="text-[48px] leading-[48px] pb-4">
           Check out your values
         </h1>
-        <p className="mb-4 leading-5">
-          Select from the list of values below. Choose all the words that
-          resonate with you.
+        <p className="mb-4 leading-5 max-w-[600px]">
+          If you don’t like the grouping of the words, click "Try again" to
+          regenerate groupings with the same words.
         </p>
         {llmResponse ? (
           <ValuesRenderer data={llmResponse} />
