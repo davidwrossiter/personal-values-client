@@ -6,8 +6,8 @@ interface CheckBoxProps {
 
 function CheckBox({ title, isChecked, onToggle }: CheckBoxProps) {
   return (
-    <div>
-      <label className="flex items-center hover:cursor-pointer">
+    <div className="w-48 flex ">
+      <label className="flex justify-start items-center hover:cursor-pointer">
         <input
           type="checkbox"
           className="hidden peer"
