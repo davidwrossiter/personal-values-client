@@ -8,3 +8,4 @@
 - TailwindCSS
 - Vite
 - Cloudflare Pages
+- Cloudflare AI
